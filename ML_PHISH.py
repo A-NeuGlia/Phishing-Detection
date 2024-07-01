@@ -19,7 +19,7 @@ import warnings
 warnings.filterwarnings('ignore', category=FutureWarning, module='seaborn._oldcore')
 
 #Lecture des données.
-df = pd.read_csv('C:/Users/bouch/OneDrive/Documents/M2MI/MASTER/Etude de cas/archive/Phishing_Legitimate_full.csv')
+df = pd.read_csv('Phishing_Legitimate_full.csv')
 
 #Exploration de nos données.
 print(f"{df.dtypes}\n") 
