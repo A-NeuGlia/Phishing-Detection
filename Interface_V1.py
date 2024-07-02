@@ -65,12 +65,12 @@ def check_url(url):
     features = extract_features(url)
     features_df = pd.DataFrame([features])
     prediction = model.predict(features_df)
-    return "Phishing" if prediction[0] == 1 else "Legitimate"
+    return "Corrompu" if prediction[0] == 1 else "Légitime."
 
 #Création de l'interface utilisateur de l'application.
-st.title('Phishing URL Detector')
-url = st.text_input("Enter the URL to check:")
+st.title("Détecteur de tentative de hameçonnage")
+url = st.text_input("Entrez l'URL que vous souhaitez vérifier pour sa légitimité :")
 
-if st.button("Check URL"):
-    result = check_url(url)
-    st.write(f"The URL is {result}.")
+if st.button("Contrôle de l'URL : "):
+    resultat = check_url(url)
+    st.write(f"L'URL est {resultat}.")
