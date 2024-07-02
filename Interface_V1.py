@@ -1,10 +1,33 @@
 import streamlit as st
 import joblib
 import pandas as pd
+import requests
 from urllib.parse import urlparse, parse_qs
+from io import BytesIO
+import logging
 
 #importation du modèle.
-model = joblib.load('phishing_model.pkl')
+def load_model(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status() 
+        model_file = BytesIO(response.content)
+        model = joblib.load(model_file)
+        return model
+    except requests.RequestException as e:
+        logging.error(f"Requête sans succès.: {e}")
+    except joblib.externals.loky.process_executor.TerminatedWorkerError as e:
+        logging.error(f"Erreur lors du téléchargement du modèle (joblib).: {e}")
+    except Exception as e:
+        logging.error(f"Une erreur s'est produite.: {e}")
+
+# Use the function
+model_url = 'https://github.com/A-NeuGlia/Phishing-Detection/raw/master/phishing_model.pkl'
+model = load_model(model_url)
+if model:
+    print("Modèle téléchargé avec succès.")
+else:
+    print("Erreur lors du téléchargement du modèle.")
 
 #Extraction des caractéristiques dont nous nous sommes servis pour créer le modèle.
 def extract_features(url):
