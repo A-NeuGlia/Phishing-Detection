@@ -68,7 +68,7 @@ def check_url(url):
     return "Corrompu" if prediction[0] == 1 else "Légitime."
 
 #Création de l'interface utilisateur de l'application.
-st.title("Détecteur de tentative de hameçonnage")
+st.title("Détecteur de tentative d'hameçonnage")
 url = st.text_input("Entrez l'URL que vous souhaitez vérifier pour sa légitimité :")
 
 if st.button("Contrôle de l'URL : "):
