@@ -15,6 +15,8 @@ from sklearn.metrics import accuracy_score
 import optuna
 import joblib
 import warnings
+import os
+
 #On vient aussi filtrer les avertissements émis par la librairie 'seaborn_oldcore' pour améliorer la visibilité de nos sorties. 
 warnings.filterwarnings('ignore', category=FutureWarning, module='seaborn._oldcore')
 
@@ -138,4 +140,7 @@ model.fit(X_entrainement, Y_entrainement)
 y_prediction = model.predict(X_test)
 print(classification_report(y_test, y_prediction))
 
-joblib.dump(model, 'phishing_model.pkl')   
+
+model_directory = "C:/Users/bouch/OneDrive/Documents/M2MI/MASTER/Etude de cas"
+model_path = os.path.join(model_directory, 'phishing_model.pkl')
+joblib.dump(model, model_path)  
