@@ -114,7 +114,6 @@ pyinstaller==6.8.0
 pyinstaller-hooks-contrib==2024.7
 PyJWT==2.8.0
 pyOpenSSL==24.1.0
-pyparsing==3.1.2
 pywin32==306
 pywin32-ctypes==0.2.2
 pywinpty==2.0.13
