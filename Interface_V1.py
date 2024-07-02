@@ -69,7 +69,7 @@ def check_url(url):
 
 #Création de l'interface utilisateur de l'application.
 st.title("Détecteur de tentative d'hameçonnage")
-url = st.text_input("Entrez l'URL que vous souhaitez vérifier pour sa légitimité :")
+url = st.text_input("Entrez l'URL dont vous souhaitez vérifier la légitimité :")
 
 if st.button("Contrôle de l'URL : "):
     resultat = check_url(url)
