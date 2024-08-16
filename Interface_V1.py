@@ -15,14 +15,18 @@ def load_model(url):
    
 
 # Use the function
+<<<<<<< HEAD
 model_url ='phishing_model.pkl'
+=======
+model_url ='https://raw.githubusercontent.com/A-NeuGlia/Phishing-Detection/master/phishing_model.pkl'
+>>>>>>> 4d4f79320d474fef810c67d6cc7988834acfbd02
 model = load_model(model_url)
 if model:
     print("Modèle téléchargé avec succès.")
 else:
     print("Erreur lors du téléchargement du modèle.")
 
-#Extraction des caractéristiques dont nous nous sommes servis pour créer le modèle .
+#Extraction des caractéristiques dont nous nous sommes servis pour créer le modèle.
 def extract_features(url):
     parsed_url = urlparse(url)
     domain_parts = parsed_url.netloc.split('.')
