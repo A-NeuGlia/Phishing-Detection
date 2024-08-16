@@ -15,7 +15,7 @@ def load_model(url):
    
 
 # Use the function
-model_url ='model_url = 'https://raw.githubusercontent.com/A-NeuGlia/Phishing-Detection/master/phishing_model.pkl'
+model_url ='https://raw.githubusercontent.com/A-NeuGlia/Phishing-Detection/master/phishing_model.pkl'
 model = load_model(model_url)
 if model:
     print("Modèle téléchargé avec succès.")
