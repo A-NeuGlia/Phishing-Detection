@@ -135,7 +135,7 @@ etude.optimize(objectif, n_trials=100)
 #On extrait alors le meilleur essai nous permettant d'automatiser la recherche des meilleurs paramètres.
 meilleur_essaie = etude.best_trial
 resultat = meilleur_essaie.params
-model = RandomForestClassifier(n_estimators=resultat['n_estimations'], max_depth=resultat['prodondeur_maximum'], min_samples_split=resultat['echantillons_min_div'], min_samples_leaf=resultat['echantillons_min_noeud'], random_state=42, n_jobs=-1)
+model = RandomForestClassifier(n_estimators=resultat['n_estimations'], max_depth=resultat['profondeur_maximum'], min_samples_split=resultat['echantillons_min_div'], min_samples_leaf=resultat['echantillons_min_noeud'], random_state=42, n_jobs=-1)
 model.fit(X_entrainement, Y_entrainement)
 y_prediction = model.predict(X_test)
 print(classification_report(y_test, y_prediction))
