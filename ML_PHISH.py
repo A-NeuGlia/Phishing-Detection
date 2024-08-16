@@ -19,7 +19,7 @@ warnings.filterwarnings('ignore', category=FutureWarning, module='seaborn._oldco
 #Lecture des données.
 df = pd.read_csv('Phishing_Legitimate_full.csv')
 
-#Exploration de nos données.
+#Exploration de nos données .
 print(f"{df.dtypes}\n") 
 #Taille de nos données.
 print(f"Dimensions: {df.shape[0]} x {df.shape[1]}\n")
