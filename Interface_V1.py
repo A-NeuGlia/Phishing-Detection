@@ -15,9 +15,8 @@ def load_model(url):
    
 
 # Use the function
-<<<<<<< HEAD
+
 model_url ='phishing_model.pkl'
-=======
 model_url ='https://raw.githubusercontent.com/A-NeuGlia/Phishing-Detection/master/phishing_model.pkl'
 model = load_model(model_url)
 if model:
